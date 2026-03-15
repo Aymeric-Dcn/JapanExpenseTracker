@@ -1,8 +1,16 @@
+![Platform](https://img.shields.io/badge/platform-iOS-blue)
+![Swift](https://img.shields.io/badge/Swift-5-orange)
+![SwiftUI](https://img.shields.io/badge/UI-SwiftUI-green)
 # Japan Expense Tracker 🇯🇵💸
 
 A simple iOS application built with **SwiftUI** to track daily expenses during a trip to Japan.
 
 The app was designed to quickly record expenses (cash or card), monitor remaining cash after withdrawals, and visualize spending through simple statistics.
+## Requirements
+
+- iOS 17+
+- Xcode 15+
+- Swift 5
 
 ## Features
 
@@ -46,8 +54,6 @@ The app currently includes:
 - **Expenses**
   - Filterable list
   - Simple bar chart visualization
-
-- **Statistics**
   - Spending totals for:
     - Today
     - This week
@@ -69,6 +75,7 @@ Expenses and withdrawals are stored locally in the application's **Documents Dir
 This allows data to persist between app launches without requiring a database or internet connection.
 
 ## Project Structure
+```
 JapanExpenseTracker/
 │
 ├── Models
@@ -85,7 +92,7 @@ JapanExpenseTracker/
 │ └── StatsView.swift
 │
 └── JapanExpenseTrackerApp.swift
-
+```
 ## Possible Future Improvements
 
 - Category spending pie chart

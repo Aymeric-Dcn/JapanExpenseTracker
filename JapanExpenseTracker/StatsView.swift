@@ -11,7 +11,6 @@ struct StatsView: View {
     
     var categories: [String] { ["All"] + manager.categories }
     
-    
     func formatAmount(_ amount: Double) -> String {
         let value = useEuro ? amount * 0.0062 : amount
         let symbol = useEuro ? "€" : "¥"
@@ -26,41 +25,41 @@ struct StatsView: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(spacing: 10) {
             
-            Picker("Category", selection: $selectedCategory) {
-                ForEach(categories, id: \.self) { Text($0) }
+            // Filtrages
+            HStack {
+                Picker("Category", selection: $selectedCategory) {
+                    ForEach(categories, id: \.self) { Text($0) }
+                }
+                Picker("Payment", selection: $selectedPaymentMethod) {
+                    ForEach(paymentMethods, id: \.self) { Text($0) }
+                }
             }
             .pickerStyle(.menu)
-            
-            Picker("Payment", selection: $selectedPaymentMethod) {
-                ForEach(paymentMethods, id: \.self) { Text($0) }
-            }
-            .pickerStyle(.menu)
-            
             Toggle("Show in Euro", isOn: $useEuro)
-                .padding()
+                .padding(.horizontal)
             
             List {
                 let now = Date()
                 let calendar = Calendar.current
                 
-                Section("Today") {
+                Section(header: Text("Today").foregroundColor(.blue)) {
                     let today = filterExpenses(manager.expenses.filter { calendar.isDateInToday($0.date) })
                     Text(formatAmount(today.reduce(0) { $0 + $1.amountYen }))
                 }
                 
-                Section("This Week") {
+                Section(header: Text("This Week").foregroundColor(.purple)) {
                     let week = filterExpenses(manager.expenses(forWeekOf: now))
                     Text(formatAmount(week.reduce(0) { $0 + $1.amountYen }))
                 }
                 
-                Section("This Month") {
+                Section(header: Text("This Month").foregroundColor(.orange)) {
                     let month = filterExpenses(manager.expenses.filter { calendar.component(.month, from: $0.date) == calendar.component(.month, from: now) })
                     Text(formatAmount(month.reduce(0) { $0 + $1.amountYen }))
                 }
                 
-                Section("Total") {
+                Section(header: Text("Total").foregroundColor(.green)) {
                     let total = filterExpenses(manager.expenses)
                     Text(formatAmount(total.reduce(0) { $0 + $1.amountYen }))
                 }

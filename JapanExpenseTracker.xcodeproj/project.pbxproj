@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		B00968012F66E72E00E112E6 /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00968002F66E72E00E112E6 /* AddExpenseView.swift */; };
+		B00968072F66EAD200E112E6 /* ExpenseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00968062F66EAD200E112E6 /* ExpenseListView.swift */; };
+		B00968092F66EC4700E112E6 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00968082F66EC4700E112E6 /* FileManagerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B00967F22F66DFCB00E112E6 /* JapanExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JapanExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B00968002F66E72E00E112E6 /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
+		B00968062F66EAD200E112E6 /* ExpenseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListView.swift; sourceTree = "<group>"; };
+		B00968082F66EC4700E112E6 /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -37,7 +41,9 @@
 		B00967E92F66DFCB00E112E6 = {
 			isa = PBXGroup;
 			children = (
+				B00968082F66EC4700E112E6 /* FileManagerExtension.swift */,
 				B00968002F66E72E00E112E6 /* AddExpenseView.swift */,
+				B00968062F66EAD200E112E6 /* ExpenseListView.swift */,
 				B00967F42F66DFCB00E112E6 /* JapanExpenseTracker */,
 				B00967F32F66DFCB00E112E6 /* Products */,
 			);
@@ -125,6 +131,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B00968072F66EAD200E112E6 /* ExpenseListView.swift in Sources */,
+				B00968092F66EC4700E112E6 /* FileManagerExtension.swift in Sources */,
 				B00968012F66E72E00E112E6 /* AddExpenseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

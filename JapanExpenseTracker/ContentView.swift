@@ -17,19 +17,19 @@ struct ContentView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                 
-                NavigationLink("Ajouter une dépense") {
+                NavigationLink("Add Expense") {
                     AddExpenseView()
                 }
                 
-                NavigationLink("Ajouter un retrait cash") {
-                    Text("Ecran retrait")
+                NavigationLink("Add Cash Withdrawal") {
+                    Text("Withdrawal Screen")
                 }
                 
-                NavigationLink("Voir les dépenses") {
-                    Text("Historique")
+                NavigationLink("See Expenses") {
+                    ExpenseListView()
                 }
                 
-                NavigationLink("Statistiques") {
+                NavigationLink("Statistics") {
                     Text("Stats")
                 }
                 
